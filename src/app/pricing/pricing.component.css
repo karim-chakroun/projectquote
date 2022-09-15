@@ -1,0 +1,193 @@
+ul .btn2{
+    width: 25px ;
+    height: 25px;
+    margin-top: 0px ;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    border-radius: 5px;
+  border-color: rgba(242, 242, 242, 0);
+    box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0), 0 17px 50px 0 rgba(255, 255, 255, 0);
+    margin-left: 16px;
+  }
+     ul .btn1{
+    width: 120px ;
+    height: 30px;
+    margin-top: 0px ;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  border-color:  rgba(242, 242, 242, 0);
+    box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0), 0 17px 50px 0 rgba(255, 255, 255, 0);
+    margin-left: 10px;
+  }
+  
+  .bt{
+      width: 124px ;
+    height: 27px;
+    margin-top: 0px ;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    border-radius: 12px;
+    border-bottom-color:  rgba(50, 49, 49, 0.108);
+  border-right-color:  rgba(50, 49, 49, 0.085);
+  border-left-color: rgb(217, 217, 217) ;
+  border-top: rgb(217, 217, 217);
+    box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0), 0 17px 50px 0 rgba(255, 255, 255, 0);
+    margin-left: 12px;  
+  }
+  .bt1{
+      width: 140px ;
+    height: 27px;
+    margin-top: 0px ;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    border-radius: 12px;
+    background: white;
+  border-bottom-color:  rgba(50, 49, 49, 0.14);
+  border-right-color:  rgba(50, 49, 49, 0.106);
+  border-left-color:  white;
+  border-top: white;
+    box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.089), 0 17px 50px 0 rgba(255, 255, 255, 0);
+    margin-left: 0px;  
+  }
+  .bt3{
+      width: 140px ;
+    height: 27px;
+    margin-top: 0px ;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    border-radius: 12px;
+    background: white;
+  border-bottom-color:  rgba(50, 49, 49, 0.14);
+  border-right-color:  rgba(50, 49, 49, 0.106);
+  border-left-color: rgba(50, 49, 49, 0.106); ;
+  border-top: rgba(50, 49, 49, 0.106);;
+    box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.089), 0 17px 50px 0 rgba(255, 255, 255, 0);
+    margin-left: -4px;  
+  }
+  .bt4{
+      width: 140px ;
+    height: 27px;
+    margin-top: 27px;
+    color: rgb(5, 4, 4);
+    font-size: 11px;
+    border-radius: 0px;
+    background: white;
+  border-bottom-color:  rgba(50, 49, 49, 0.363);
+  border-right-color:  rgba(255, 255, 255, 0);
+  border-left-color: rgba(255, 255, 255, 0);
+  border-top: white;
+    box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.089), 0 17px 50px 0 rgba(255, 255, 255, 0);
+    margin-left:30px;  
+  }
+  .bt5{
+      width: 55px ;
+    height: 27px;
+    margin-top: 30px;
+    color: rgb(1, 1, 1);
+    font-size: 11px;
+    border-radius: 0px;
+    background: white;
+  border-bottom-color:  rgba(50, 49, 49, 0.363);
+  border-right-color:  rgba(255, 255, 255, 0);
+  border-left-color: rgba(255, 255, 255, 0);
+  border-top: white;
+    box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.089), 0 17px 50px 0 rgba(255, 255, 255, 0);
+    margin-left:-126px;  
+  }
+  .text{font-size: 12px;
+  margin-left: -45px;
+  }
+  .bt6{
+      width: 120px ;
+    height: 27px;
+    margin-top: 0px ;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    border-radius: 12px;
+    background: white;
+  border-bottom-color:  rgba(50, 49, 49, 0.227);
+  border-right-color:  rgba(50, 49, 49, 0.233);
+  border-left-color:  rgba(255, 255, 255, 0);
+  border-top: rgba(255, 255, 255, 0);
+    box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.089), 0 17px 50px 0 rgba(255, 255, 255, 0);
+    margin-left: 0px;  
+  }
+  .bt7{
+      width: 120px ;
+    height: 50px;
+    margin-top: 20px ;
+   
+    border-radius: 12px;
+   
+    margin-left: 20px;  
+  }
+  .plus{
+    background-color: #00904e;
+    border-radius: 20px;
+    color:white;
+  }
+  .card{background-color: rgb(242,242, 242);
+  margin-left: 1270px;
+  width: 390px;
+  margin-top: -500px;
+  height:450px;}
+  .bt8{
+      width: 95px ;
+    height: 55px;
+    margin-top: 0px ;
+    color: white;
+    font-size: 10px;
+    border-radius: 12px;
+  
+  }
+
+  .exemple {
+    
+    background-color: white;
+    
+    
+  }
+
+  ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+    color:black;
+    background-color: white;
+    }
+
+    .example-chip-list {
+      width: 100%;
+    }
+    
+
+
+  
+::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color,#00904e) !important;
+  }
+
+  .mat-input-element {
+    background-color: white;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: white;
+}
+
+.example-container {
+  width: 100px;
+  margin-left: 1cm;
+}
+
+th, td {
+ /*border: 1px solid black;*/
+}
+
+::ng-deep .dateform{
+  margin-left: -300px;
+}
+::ng-deep mat-tab-body-content{
+
+  display: flex;
+  justify-content: center;
+}

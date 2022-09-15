@@ -1,0 +1,39 @@
+
+<div *ngIf="tickersbyid">
+    
+    
+    <form [formGroup]="service.formModel" (ngSubmit)="updateTicker()">
+        <div class="mb-3">
+            <label class="form-label">Isin</label>
+            <input type="text" class="form-control" formControlName="isin" [(ngModel)]="tickersbyid.isin">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">BbgCode</label>
+            <input type="text" class="form-control" formControlName="bbgCode" [(ngModel)]="tickersbyid.bbgCode" >
+        </div>
+        <div class="mb-3">
+            <label class="form-label">EodCode</label>
+            <input type="text" class="form-control" formControlName="eodCode" [(ngModel)]="tickersbyid.eodCode">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" [(ngModel)]="tickersbyid.name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Type</label>
+            <input type="text" class="form-control" formControlName="type" [(ngModel)]="tickersbyid.type">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Type</label>
+            <mat-slide-toggle formControlName="quotable" [(ngModel)]="isChecked">is QUOTABLE: {{isChecked}}</mat-slide-toggle>
+        </div>
+
+
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Update</button>
+        </div>
+    </form>
+    <button (click)="Cancel()" class="btn btn-Light mb-3">Cancel</button>
+    
+</div>

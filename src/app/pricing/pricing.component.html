@@ -1,0 +1,467 @@
+
+        <mat-tab-group animationDuration="0ms" class="exemple" color="accent" background-color="primary">
+            <mat-tab label="tab" *ngFor="let tab of tabs; let index = index" [label]="tab">
+                <ng-template mat-tab-label>
+                    {{tab}}
+                    <img src="assets/images/pricing/1.PNG" style="margin-left:70px;margin-top: 6px" [routerLink]=""
+                        (click)="removeTab(index)">
+                </ng-template>
+                <button class="btn plus " style="margin-left:1270px;margin-top: 40px; width: 390px;"   (click)="addTab()" [disabled]="tabs.length>=5">
+                    New Tab
+                    </button>
+
+                <form [formGroup]="formModel" (ngSubmit)="sendMail()"
+                    style="margin-left:200px;background: white;height: 571px;">
+
+                    <table style="margin-left:-25px; ">
+
+                        <tr>
+                            <td><button type="button" class="bt" style="margin-right:-15px;margin-top: 27px;"><span
+                                        style="margin-left: -46px;">Client</span></button></td>
+                            <td>
+                            <td><input type="text" class="bt6" style="margin-left:-145px;margin-top: 27px;"
+                                    placeholder="    Search"><img src="assets/images/pricing/1.PNG"
+                                    style="margin-left:-30px;margin-top: -1px;"></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 30px;margin-left: -160px;">Quote Type</h4>
+                            </td>
+                            <td> <span><select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                        style="width:105px;border-radius: 17px;margin-left:-250px;margin-top:27px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 8px solide rgba(83, 82, 82, 0.241);
+                      border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                      border-left-color:  white;border-radius: 10px;
+                      border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);">
+                                        <option selected>Indicative</option>
+                                        <option value="1">v-One</option>
+                                        <option value="2">v-Two</option>
+                                        <option value="3">v-Three</option>
+                                    </select></span></td>
+
+
+                            <td>
+                                <h4 class="text" style="margin-top: 30px;margin-left: -275px;">Banks</h4>
+                            </td>
+                            <td> <span><select [ngModel]="selectedBank" (ngModelChange)="onChangeBank($event)"
+                                        name="banks" formControlName="bankName" class="form-select form-select-sm"
+                                        aria-label=".form-select-sm example"
+                                        style="width:105px;border-radius: 17px;margin-left:-210px;margin-top:27px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 8px solide rgba(83, 82, 82, 0.241);
+                              border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                              border-left-color:  white;border-radius: 10px;
+                              border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);">
+                                        <option selected>Banks</option>
+                                        <option [value]="bank" *ngFor="let bank of banks">{{bank}}</option>
+                                    </select></span></td>
+                        </tr>
+
+                        <tr>
+                            <td><button type="button" class="bt" style="margin-right:-15px;margin-top: 23px;"><span
+                                        style="margin-left: -32px;">Product</span></button></td>
+                            <td>
+                                <div *ngIf="autoCall=='Reverse'">
+                                    <button type="button" class="bt1"
+                                        style="margin-left:30px;background-color: rgb(0, 144, 78);margin-top: 23px;">Reverse
+                                        Convertible</button>
+                                </div>
+                                <div *ngIf="autoCall !='Reverse'">
+
+                                    <button type="button" class="bt1" style="margin-left:30px;margin-top: 23px;"
+                                        (click)="reverseAutoCall()">Reverse
+                                        Convertible</button>
+
+                                </div>
+
+                            </td>
+                            <td>
+                                <div *ngIf="autoCall=='Phoenix'">
+                                    <button type="button" class="bt3"
+                                        style="margin-top: 23px;background-color: rgb(0, 144, 78);margin-left:30px;">Autocall
+                                        Phoenix</button>
+                                </div>
+                                <div *ngIf="autoCall !='Phoenix'">
+
+                                    <button type="button" class="bt1" style="margin-left:30px;margin-top: 23px;"
+                                        (click)="phoenixAutoCall()">Autocall
+                                        Phoenix</button>
+
+
+                                </div>
+
+                            </td>
+                            <td>
+                                <div *ngIf="autoCall=='Classic'">
+                                    <button type="button" class="bt1"
+                                        style="margin-left:30px;background-color: rgb(0, 144, 78);margin-top: 23px;">Classic
+                                        Autocall</button>
+                                </div>
+                                <div *ngIf="autoCall !='Classic'">
+
+                                    <button type="button" class="bt1" style="margin-left:30px;margin-top: 23px;"
+                                        (click)="classicAutoCall()">Classic
+                                        Autocall</button>
+
+                                </div>
+
+
+                            </td>
+                            <td>
+                                <div *ngIf="autoCall=='RCB'">
+                                    <button type="button" class="bt1"
+                                        style="margin-left:30px;background-color: rgb(0, 144, 78);margin-top: 23px;">RCB
+                                        Autocall</button>
+                                </div>
+                                <div *ngIf="autoCall !='RCB'">
+
+                                    <button type="button" class="bt1" style="margin-left:30px;margin-top: 23px;"
+                                        (click)="rcbAutoCall()">RCB
+                                        Autocall</button>
+
+                                </div>
+
+
+                        </tr>
+
+                        <tr>
+                            <td><button type="button" class="bt"
+                                    style="margin-right:-15px;margin-top: 20px;height: 42px;"><span
+                                        style="margin-left: -20px; font-size: 11.5px;">Investment </span><br><span
+                                        style="margin-left: -20px;font-size: 11.5px;"> Parametres</span></button></td>
+                            <td><input type="text" class="bt4" placeholder="Amount" formControlName="amount"></td>
+                            <td><select class="form-select form-select-sm" formControlName="currency"
+                                    aria-label=".form-select-sm example"
+                                    style="width:69px;border-radius: 15px;margin-left:10px;margin-top: 27px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 15px solid rgba(50, 49, 49, 0.308);
+                border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                border-left-color:  white;
+                border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);">
+                                    <option selected>USD</option>
+                                    <option value="1">v-One</option>
+                                    <option value="2">v-Two</option>
+                                    <option value="3">v-Three</option>
+                                </select></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 40px;margin-left: -60px;">Solve for</h4>
+                            </td>
+                            <td> <span><select class="form-select form-select-sm" formControlName="requestType"
+                                        aria-label=".form-select-sm example"
+                                        style="width:90px;border-radius: 17px;margin-left:-160px;margin-top: 27px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 8px solide rgba(83, 82, 82, 0.241);
+                border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                border-left-color:  white;
+                border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);"
+                [ngModel]="selectedRequestType" (ngModelChange)="onChangeRequestTypes($event)">
+                <option [ngValue]="i" *ngFor="let i of requestTypes">{{i}}</option>
+
+                                    </select></span></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 40px;margin-left: -220px;">Reoffer</h4>
+                            </td>
+                            <td> <input type="text" class="bt5" style="margin-left:-180px;" formControlName="reoffer">
+                            </td>
+                            <td>
+                                <h4 class="text" style="margin-top: 40px;margin-left: -120px;">%</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="bt"
+                                    style="margin-right:-15px;margin-top: 10px;height: 27px;"><span
+                                        style="margin-left: -44px;">Dates</span></button></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 15px;margin-left: 35PX;">Maturity</h4>
+                            </td>
+                            <td><input type="text" class="bt4" formControlName="tenor" placeholder="       24"
+                                    style="width:60px;margin-left: -85px ;margin-top: 8px;"></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 15px;margin-left: -155px;">Months</h4>
+                            </td>
+                            <td>
+                                <h4 class="text" style="margin-top: 15px;margin-left:-223px ;">Strike Date</h4>
+                            </td>
+                            <td>
+                                <mat-form-field class="dateform">
+                                    <input matInput [matDatepicker]="picker" [matDatepickerFilter]="weekendsDatesFilter"
+                                        formControlName="initialFixingDate" placeholder="Choose a date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </td>
+                            <td *ngIf="setledate">
+                                <h4 class="text" style="margin-top: 15px;margin-left: -100px;">Settlement Delay</h4>
+                            </td>
+                            <td> <span *ngIf="setledate">
+
+                                    <mat-select name="test">
+                                        <mat-option (click)="addOneWeeks(setledate)">
+                                            1 week
+                                        </mat-option>
+                                        <mat-option (click)="addTwoWeeks(setledate)">
+                                            2 weeks
+                                        </mat-option>
+                                        <mat-option (click)="addThreeWeeks(setledate)">
+                                            3 weeks
+                                        </mat-option>
+                                    </mat-select>
+                                </span></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="bt" style="margin-right:-15px;margin-top: 10px;"><span
+                                        style="margin-left: -17px;">Underlyings</span></button></td>
+                            <td>
+                                <mat-form-field class="example-chip-list" appearance="fill" width="10px"
+                                    class="example-container">
+                                    <mat-label>Underlings</mat-label>
+                                    <mat-chip-list #chipList aria-label="underling selection" width="10px">
+
+                                        <input placeholder="Search" #underlingInput [formControl]="underlingCtrl"
+                                            [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                            (matChipInputTokenEnd)="add($event)">
+                                    </mat-chip-list>
+                                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                                        <mat-option *ngFor="let underling of filteredunderlings | async"
+                                            [value]="underling">
+                                            {{underling}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
+                            </td>
+                            <td colspan="3">
+                                <mat-chip *ngFor="let underling of underlings" (removed)="remove(underling)">
+                                    <img matChipAvatar [src]="'assets/images/pricing/'+underling+'.PNG'"
+                                        alt="Photo of a Shiba Inu" />
+                                    {{underling}}
+                                    <button matChipRemove>
+                                        <mat-icon>cancel</mat-icon>
+                                    </button>
+                                </mat-chip>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="bt" style="margin-right:-15px;margin-top:17px;"><span
+                                        style="margin-left: -32px;">Coupons</span></button></td>
+                            <td><input type="text" formControlName="coupon" class="bt4"
+                                    style="width:40px;margin-left: 30px ;margin-top: 8px;">
+                            </td>
+                            <td>
+                                <h4 class="text" style="margin-top: 18px;margin-left: -90px;">%</h4>
+                            </td>
+                            <td> <span><select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                        style="width:105px;border-radius: 17px;margin-left:-230px;margin-top: 17px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 8px solide rgba(83, 82, 82, 0.241);
+                border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                border-left-color:  white;border-radius: 10px;
+                border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);">
+                                        <option selected>per Annum</option>
+                                        <option value="1">v-One</option>
+                                        <option value="2">v-Two</option>
+                                        <option value="3">v-Three</option>
+                                    </select></span></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 28px;margin-left: -280px;">Frequancy</h4>
+                            </td>
+                            <td> <span><select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                        style="width:105px;border-radius: 17px;margin-left:-380px;margin-top:17px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 8px solide rgba(83, 82, 82, 0.241);
+                border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                border-left-color:  white;border-radius: 10px;
+                border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);" 
+                [ngModel]="selectedFrequency" (ngModelChange)="onChangeFrequency($event)" formControlName="frequency">
+                <option [ngValue]="i" *ngFor="let i of frequencyList">{{i}}</option>
+
+                                    </select></span></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 28px;margin-left: -250px;">Type</h4>
+                            </td>
+                            <td> <span><select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                        style="width:105px;border-radius: 17px;margin-left:-220px;margin-top: 17px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 8px solide rgba(83, 82, 82, 0.241);
+                border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                border-left-color:  white;border-radius: 10px;
+                border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);">
+                                        <option selected>Memory</option>
+                                        <option value="1">v-One</option>
+                                        <option value="2">v-Two</option>
+                                        <option value="3">v-Three</option>
+                                    </select></span></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 28px;margin-left: -100px;">Barrier</h4>
+                            </td>
+                            <td><input type="text" class="bt4" style="width:60px;margin-left: -50px ;margin-top: 18px;">
+                            </td>
+                            <td>
+                                <h4 class="text" style="margin-top: 25px;margin-left: -0px;">%</h4>
+                            </td>
+                        </tr>
+                        <tr *ngIf="autoCall !='Reverse'">
+                            <td><button type="button" class="bt" style="margin-right:-15px;margin-top: 17px;"><span
+                                        style="margin-left: -32px;">Autocall</span></button></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 23px;margin-left: 32px;">Trigger</h4>
+                            </td>
+                            <td><input type="text" class="bt4"
+                                    style="width:55px;margin-left: -100px ;margin-top: 12px;">
+                            </td>
+                            <td>
+                                <h4 class="text" style="margin-top: 23px;margin-left: -180px;">%</h4>
+                            </td>
+
+                            <td>
+                                <h4 class="text" style="margin-top: 23px;margin-left: -285px;">Frequancy</h4>
+                            </td>
+                            <td> <span><select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                        style="width:105px;border-radius: 15px;margin-left:-375px;margin-top:24px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 8px solide rgba(83, 82, 82, 0.241);
+                border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                border-left-color:  white;border-radius: 10px;
+                border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);">
+                                        <option selected>Quarterly</option>
+                                        <option value="1">v-One</option>
+                                        <option value="2">v-Two</option>
+                                        <option value="3">v-Three</option>
+                                    </select></span></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 23px;margin-left: -255px;">Autocall delay</h4>
+                            </td>
+                            <td> <span><select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                        style="width:105px;border-radius: 17px;margin-left:-170px;margin-top: 22px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 8px solide rgba(83, 82, 82, 0.241);
+                border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                border-left-color:  white;border-radius: 10px;
+                border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);">
+                                        <option selected>No Delay</option>
+                                        <option value="1">v-One</option>
+                                        <option value="2">v-Two</option>
+                                        <option value="3">v-Three</option>
+                                    </select></span></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" class="bt"
+                                    style="margin-right:-15px;margin-top: 17px;height: 42px;"><span
+                                        style="margin-left: -20px; font-size: 11.5px;">Downside </span><br><span
+                                        style="margin-left: -20px;font-size: 11.5px;"> Protection</span></button></td>
+
+                            <td>
+                                <h4 class="text" style="margin-top: 18px;margin-left: 30px;">Type</h4>
+                            </td>
+                            <td><select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                    style="width:75px;border-radius: 15px;margin-left:-100px;margin-top: 17px;color: rgba(112, 109, 109, 0.341);border-bottom-color: 15px solid rgba(50, 49, 49, 0.308);
+                            border-right-color: 5px solid rgba(50, 49, 49, 0.194);
+                            border-left-color:  white;
+                            border-top: white;box-shadow: 0 12px 15px 0 rgba(221, 218, 218, 0.116), 0 17px 50px 0 rgba(255, 255, 255, 0.141);">
+                                    <option selected>Type</option>
+                                    <option value="1">v-One</option>
+                                    <option value="2">v-Two</option>
+                                    <option value="3">v-Three</option>
+                                </select></td>
+                            <td>
+                                <h4 class="text" style="margin-top: 18px;margin-left: -160px;">Strike Level</h4>
+                            </td>
+                            <td><input type="text" class="bt4" style="width:55px;margin-left: -250px ;margin-top: 8px;" formControlName="strikeLevel">
+                            </td>
+                            <td>
+                                <h4 class="text" style="margin-top: 18px;margin-left: -350px;">%</h4>
+                            </td>
+                            <td>
+                                <h4 class="text" style="margin-top: 18px;margin-left: -320px;">Barrier</h4>
+                            </td>
+                            <td><input type="text" class="bt4" style="width:55px;margin-left: -260px ;margin-top: 8px;" formControlName="barrierLevel">
+                            </td>
+                            <td>
+                                <h4 class="text" style="margin-top: 18px;margin-left: -190px;">%</h4>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <div>
+                        <button type="submit" class="bt7 btn"
+                            style="margin-top:1cm;margin-left: -13px;width: 870px;background: rgb(0, 144, 78);color: white;">
+                            price
+                        </button>
+                    </div>
+                </form>
+
+
+
+                <div class="card">
+
+                    <div class="card-body">
+
+                        <table>
+                            <tr>
+                                <td><button type="button" class="bt3"
+                                        style="margin-top: 15px;background-color: rgb(0, 144, 78);width:165px;margin-left: -37px;margin-top:-25px;margin-bottom: 15px;"><span
+                                            style="margin-left:-30px;font-size:11px;">Indicative Quotes</span></button>
+                                </td>
+                                <td>
+                                    <div style="margin-bottom: 15px;"><span style="font-size: 13px;margin-left: 47px;">
+                                            Quote ID: <span
+                                                style="color:rgba(0, 144, 79, 0.796) ;"><b>123456</b></span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <tr>
+                                <td> <br><b style="font-size: 12px;margin-left:30px;margin-top: 100px;">Bank</b></td>
+                                <td><br><b style="font-size: 12px;margin-left:52px;">Results</b></td>
+                            </tr>
+
+                            <tr *ngIf="bank!==null">
+                                <td><img [src]="'assets/images/pricing/'+bank+'.PNG'" style="margin-top:5px;margin-left: 25px;">
+                                </td>
+                                <td><span
+                                        style="color:rgba(0, 144, 79, 0.796) ;font-size: 13PX;margin-left: 54px;margin-top: 16px;"><b>{{result}}</b></span>
+                                </td>
+                            </tr>
+                            
+                            
+                            
+                            
+                            
+
+                            <tr>
+
+                                <td style="font-size: 12px;"><span style="margin-left:5px;"><br><br>08/06/2022</span>
+                                </td>
+                                <td style="font-size: 12px;margin-left:10px;margin-left:300px ;"><br><br><span
+                                        style="margin-left:49px;">Stradegy Margin: <span
+                                            style="color:rgba(0, 144, 79, 0.796) ;"><b>X%X%</b></span></span></td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                </div>
+                <table style="margin-left:1270px;margin-top: 48px;">
+                    <tr>
+                        <td> <button class="bt8 btn" style="background-color: rgb(0,144,78);"> Save
+                                    Favourite</button></td>
+                        <td> <button class="bt8 btn" style="background-color: rgb(90,145,90);"> Request Firm
+                                    Price</button>
+                        </td>
+                        <td> <button class="bt8 btn" style="background-color: rgb(37,121,72);"> <span>Create
+                                    Snapshot</span></button></td>
+                        <td> <button class="bt8 btn" style="background-color: rgb(0,66,36);"> <span>Generate
+                                    Factsheet</span></button></td>
+                    </tr>
+                </table>
+
+
+              
+                <div align="center">
+                    <p style="font-size:11px;margin-top:1.5cm">Copyright 2022 l Stradegy Investment Solutions Ltd l All
+                        Rights Reserved I
+                        Disclaimer</p>
+                </div>
+
+            </mat-tab>
+
+
+
+
+
+
+        </mat-tab-group>
+    <!-- <li class="nav-item">
+        <button type="button" class="btn2" (click)="addTab()"><img src="assets/images/pricing/3.PNG"
+                style="margin-left:-5px;"></button>
+    </li> -->
+
+
+
+
+

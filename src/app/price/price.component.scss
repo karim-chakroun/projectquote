@@ -1,0 +1,284 @@
+.panel {
+    background-color: white;
+    height: 95%;
+  }
+  
+  .btn-primary {
+    background-color: #00904E !important;
+    font-weight: 300;
+    height: 45px;
+    line-height: 16px;
+    padding: 5px;
+    text-transform: none;
+    border-radius: 12px;
+    //font-family: 'AvenirNextLTPro-Regular' !important;
+    
+  
+    &.dark {
+      background-color: #004224;
+      ;
+    }
+  }
+
+  .deg {
+    background-color: #00904E ;
+    font-weight: 300;
+    height: 50px;
+    line-height: 16px;
+    padding: 5px;
+    border-radius: 12px;
+    text-transform: none;
+    color: white;
+    width: 114px;
+    
+  
+    &.dark {
+      background-color: #004224;
+      ;
+    }
+  }
+  
+  
+  
+  .quotes-card {
+    border-radius: 15px;
+    background-color: #F2F2F2;
+    margin: 15px;
+    background-color: #F2F2F2;
+    box-shadow: 1px 1px 2px 0px #707070;
+  
+  }
+  
+  .txt-green {
+    color: #00904E;
+  }
+  
+  .fw-500 {
+    font-weight: 500;
+  }
+  
+  .logo {
+    max-width: 80px !important;
+  }
+  
+  
+  .bank-list {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+  
+  .bank-item {
+    height: 50px;
+  }
+  
+  .outside-left {
+    position: relative;
+    margin-left: -40px;
+    box-shadow: -5px 5px 5px 0px #6464 !important;
+    width:200px;
+    height: 30px;
+    padding-right: 2rem!important;
+    padding-left: 3rem!important;
+    padding-top: 0.4rem!important;
+  }
+  
+  
+  
+  .quotes-bar {
+    position: relative;
+    bottom: 25px;
+    height: 0;
+  }
+  
+  .quote-item {
+    background: #F2F2F2;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 35px;
+    min-width: 157px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: -10px;
+  
+    &.selected {
+      background-color: white;
+    }
+  }
+
+  
+  
+  
+  .corned {
+    border-radius: 15px;
+    padding: .5rem;
+    width: 6rem;
+    text-align: start;
+    font-weight: 500;
+    position: relative;
+    right: 25px;
+    box-shadow: 1px 1px 2px 0px #707070;
+  
+    &.gray {
+      background-color: #F2F2F2;
+      min-width: 162px;
+      display: flex;
+      box-shadow: 2px 2px 2px #00000029;
+
+    }
+  }
+  
+  .contact-logo {
+    max-width: 20px;
+  
+  }
+  
+  select {
+    padding-right: 2rem !important;
+    border: none;
+    box-shadow: 2px 2px 2px #00000029;
+      color: #D9D9D9;
+      border-radius: 13px;
+      height: 35px;
+  }
+  
+  .contact-item {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px 0px #707070;
+  }
+  
+  input {
+    outline: 0;
+    border-width: 0 0 2px;
+  }
+  
+  .scale-on-hov:hover {
+    transform: scale(1.2);
+  
+  }
+  
+  .input-group {
+    width: unset !important;
+  }
+  
+  
+  .btn-add-quote {
+    border-radius: 7px;
+    min-width: unset;
+    padding: 5px;
+    font-size: large;
+  
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+  
+  
+  
+  
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset -14px 20px 20px #707070;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: white;
+    -webkit-box-shadow: inset 0 0 6px white;
+  }
+
+  /* You can add global styles to this file, and also import other style files */
+
+.d {
+    margin-top: 0.5em;
+    display: inline-block;
+    background: #aaa0a0;
+    position: relative;
+  }
+  
+  .d:before {
+    content: "\a";
+      border-style: solid;
+      border-width: 0px 8px 8px 0;
+      border-color: transparent #707070 transparent transparent;
+      position: absolute;
+        left: 8px;
+      bottom: -8px;
+  }
+  .close {
+    cursor: pointer;
+    font-size: x-large;
+    opacity: 1;
+    margin-bottom: 5px;
+  }
+  .radio-div {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px 0px #707070;
+    padding: .1rem;
+  
+    &.selected {
+      background-color: #00904E;
+      color: white;
+    }
+  }
+  .cursor-pointer{
+    cursor: pointer;
+  }
+
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: white;
+    width: 100px;
+  }
+
+  ::ng-deep .dateform{
+    width: 120;
+  }
+
+  .px-3 {
+    padding-right: 2rem!important;
+    padding-left: 2rem!important;
+}
+  @font-face {
+    font-family: 'AvenirNextLTPro-Regular';
+    src: url('http://anthillrealtors.co.id/wp-content/themes/x-child/Fonts/AvenirNextLTPro-Regular.eot');
+    src: url('http://anthillrealtors.co.id/wp-content/themes/x-child/Fonts/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('http://anthillrealtors.co.id/wp-content/themes/x-child/Fonts/AvenirNextLTPro-Regular.woff') format('woff'),
+    url('http://anthillrealtors.co.id/wp-content/themes/x-child/Fonts/AvenirNextLTPro-Regular.ttf') format('truetype'),
+    url('http://anthillrealtors.co.id/wp-content/themes/x-child/Fonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg');
+  }
+
+
+  .mat-chip.mat-standard-chip {
+    background-color: white;
+    color: rgba(0,0,0,.87);
+    box-shadow: 2px 2px 2px #00000029;
+    opacity: 1;
+}
+.radio-div.cursor-pointer.px-3{
+  height: 36px; padding-top: 7px; margin-top: 6px; margin-left: 0px;
+}
+
+.mat-select-arrow-wrapper ng-tns-c109-2 {
+  transform: translateY(-25%);
+}
+
+#mat-select-value-1 {
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+
+  

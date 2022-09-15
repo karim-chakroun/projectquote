@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>stradegy</title>
+  <!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <form [formGroup]="formModel" (ngSubmit)="sendMail()">
+
+    <nav>
+
+      <img src="assets/images/10.PNG" class="a">
+      <div style="margin-top: -53px;margin-left: 280px ;">
+        <a href="#"> <button class="b">Portfolio</button></a>
+        <a href="#"> <button class="c">Quote</button></a>
+        <div style="margin-top: -33px;margin-left: 350px;">
+          <img src="assets/images/11.PNG" class="d">
+        </div>
+        <div style="margin-top: -50px;">
+          <img src="assets/images/12.PNG" class="e">
+        </div>
+      </div>
+    </nav>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item" style="margin-left: 2px;margin-top: -10px;background-color: white;">
+          <button class="o">
+            <a href="#" aria-label="Next">
+
+              <div aria-hidden="true" style="font-size: 22px;color: black;margin-top: -10px;">&laquo;
+              </div>
+            </a> </button>
+        </li>
+        <li class="page-item" style="margin-left: 2px;height: 25px;margin-top: -10px;background-color: white;"><a
+            class="page-link1" href="#" class="o"><b>Quote1</b> <img src="assets/images/13.PNG" class="im"></a></li>
+        <li class="page-item" style="width: 160px;"> <a class="page-link1"><b>Quote2</b><img src="assets/images/15.PNG"
+              class="im"></a></li>
+        <li class="page-item" style="width: 160px;"><a class="page-link1" href="#"><b>Quote3</b><img
+              src="assets/images/15.PNG" class="im"></a></li>
+        <li class="page-item" style="width: 160px;"><a class="page-link1" href="#"><b>Quote4</b><img
+              src="assets/images/15.PNG" class="im"></a></li>
+        <li class="page-item" style="width: 160px;"><a class="page-link1" href="#"><b>Quote5</b><img
+              src="assets/images/15.PNG" class="im"></a></li>
+        <li class="page-item" style="width: 160px;"><a class="page-link1" href="#"><b>Quote6</b><img
+              src="assets/images/15.PNG" class="im"></a></li>
+        <li class="page-item"
+          style="margin-left: 2px;margin-top: -10px;background-color: white;border-color: 5px black;">
+          <button class="o">
+            <a href="#" aria-label="Next">
+
+              <div aria-hidden="true" style="font-size: 22px;color: black;margin-top: -10px;">&raquo;</div>
+            </a> </button>
+        </li>
+        <li style="margin-top: -10px;margin-left: -13px;"> <button class="or">
+            <a href="#" aria-label="Next">
+
+              <div aria-hidden="true" style="font-size: 22px;color: black;margin-top: -10px;"> <img
+                  src="assets/images/6.PNG" class="imr"></div>
+            </a> </button></li>
+        <li style="margin-top: -10px;margin-left: -13px;"> <button class="or">
+            <a href="#" aria-label="Next">
+
+              <div aria-hidden="true" style="font-size: 22px;color: black;margin-top: -10px;"> <img
+                  src="assets/images/5.PNG" class="imr"></div>
+            </a> </button></li>
+        <li style="margin-top: -10px;"> <input type="text" placeholder="Po Poste your Princing tag" class="az"
+            style="  margin-left: -25;width: 450px;"> <img src="assets/images/8.PNG" class="pl"></li>
+      </ul>
+    </nav>
+    <div class="f">
+      <img src="assets/images/4.PNG"> <select class="form-select form-select-lg mb-3"
+        aria-label=".form-select-lg example" style="border-color: white;margin-top: -33px;margin-left: 10px;">
+        <option selected><span> <b> client</b><i> (Asset Management)</i></span></option>
+
+      </select>
+      <img src="assets/images/4.PNG">
+      <select [ngModel]="selectedBank" (ngModelChange)="onChangeBank($event)" class="form-select form-select-lg mb-3"
+        aria-label=".form-select-lg example" style="border-color: white;margin-top: -33px;margin-left: 10px;"
+        name="banks" formControlName="bankName">
+        <option [ngValue]="i" *ngFor="let i of banks"> <span> <b>Bank</b><i> ({{i}})</i></span></option>
+
+      </select>
+      <img src="assets/images/4.PNG"> <select [ngModel]="selectedProduct" (ngModelChange)="onChangeProduct($event)"
+        class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+        style="border-color: white;margin-top: -33px;margin-left: 10px;" name="product" formControlName="product">
+        <option [ngValue]="i" *ngFor="let i of products"> <span> <b>product</b><i> ({{i}})</i></span></option>
+
+      </select>
+    </div>
+    <table class="R">
+      <tr>
+        <th> <b>Investment Parametres</b></th>
+      </tr>
+      <tr>
+        <th>
+          <div class="w" style="margin-top: 4px;">AMOUNT</div>
+          <input [ngModel]="sizeValue" type="text" placeholder="0" class="v" formControlName="amount">
+          <div class="danger" *ngIf="size?.invalid && (size?.dirty || size?.touched)">
+            Amount is required
+          </div>
+        </th>
+
+
+
+        <th>
+          <div class="w" style="margin-top: 4px;">CURRENCY</div>
+          <!--<select [ngModel]="selectedDeviceObj" (ngModelChange)="onChangeObj($event)" name="sel3" formControlName="currency">
+                    <option [ngValue]="i" *ngFor="let i of deviceObjects">{{i.name}}</option>
+                  </select>
+                  {{selectedDeviceObj | json}}-->
+          <select [ngModel]="selectedCurrency" (ngModelChange)="onChangeCurrency($event)"
+            class="form-select form-select-sm" aria-label=".form-select-sm example" style="height: 28px;"
+            formControlName="currency">
+            <option [ngValue]="i" *ngFor="let i of currencies">{{i}}</option>
+          </select>
+          <div class="danger" *ngIf="currency?.invalid && (currency?.dirty || currency?.touched)">
+            Currency is required
+          </div>
+
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <div class="w" style="margin-bottom: -10px;">REOFFER</div>
+          <input type="text" placeholder="98" class="v" style="width: 125px;margin-top: -13px;margin-bottom: 15px;"
+            formControlName="reoffer" [attr.disabled]="selectedType == 'price' ? '' : null"> <button type="button"
+            class="YT">%</button> <button type="button" class="aw" style="margin-top:10px ;color: white;">✓ </button>
+          <div class="danger" *ngIf="reoffert?.invalid && (reoffert?.dirty || reoffert?.touched)">
+            reoffert is required
+          </div>
+        </th>
+
+
+        <th>
+          <div class="w">SOLVE FOR</div>
+          <select [ngModel]="selectedRequestType" (ngModelChange)="onChangeRequestTypes($event)"
+            class="form-select form-select-sm" aria-label=".form-select-sm example"
+            style="width: 190px;height: 28px;margin-bottom: 15px;" formControlName="requestType">
+            <!--<option *ngFor="let type of types; let idx = index">+</option>-->
+            <option [ngValue]="i" *ngFor="let i of requestTypes">{{i}}</option>
+          </select>
+          <div *ngIf="submitted && f.requestType.errors" class="invalid-feedback">
+            <div *ngIf="f.requestType.errors.required" style="font-size:small">requestType is required</div>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th> <b style="margin-top: 15px;">Date</b></th>
+      </tr>
+      <tr>
+        <th>
+          <div class="w" style="margin-top: 3px;">MATURITY</div>
+          <input type="number" min="1" max="60" placeholder="0" class="v" formControlName="tenor">
+          <div class="danger" *ngIf="tenor?.invalid && (tenor?.dirty || tenor?.touched)">
+            Maturity is required
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <div class="w">INITIAL FIXING DATE</div>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" [matDatepickerFilter]="weekendsDatesFilter" formControlName="initialFixingDate"
+              placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </th>
+        <th>
+        <th>
+          <div class="w" style="margin-left:-200px;">ISSUE DATE</div>
+          <input type="text" placeholder="01/02/2022" class="v2">
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <div class="w">FINAL FIXING DATE</div>
+          <input type="date" [value]="nextWeek" style="margin-top:-20px" class="v1">
+        </th>
+        <th>
+        <th>
+          <div class="w" style="margin-left:-200px;">REDEMPTON DATE</div>
+          <input type="text" placeholder="01/02/2024" class="v2">
+        </th>
+
+      </tr>
+    </table>
+    <section class="dd">
+      <table>
+
+
+
+        <tr>
+          <th> <b>Underlyings</b></th>
+        </tr>
+
+        <ng-select [multiple]="true" [ngModel]="bloombergTickerList" (ngModelChange)="onChangeBloombergTicker($event)"
+          [formControl]="toppings" style="border-style: solid;border-width: 1px;">
+          <ng-option *ngFor="let bloomberg of underlingList" [value]="bloomberg" style="color: black;display: contents"
+            placeholder="..">{{bloomberg?.bbgCode}}</ng-option>
+        </ng-select>
+
+
+
+        <!--
+              <tr >
+                <th> 
+                    <input type="text" placeholder=".......search..." class="v"> <img src="assets/images/1.PNG" style="height: 22px;width: 20px;margin-left: -170px;">
+                </th>
+            <tr>
+                <th>  
+                  <input type="text" placeholder="........AAPL US (Apple)" style="margin-top:-20px" class="v1"><div style="margin-left: 5px;margin-top: -27px;"> <img  src="assets/images/2.PNG" style="width: 23px;height: 20px;margin-top: 3px;" > </div> <div style="margin-left: 138px;margin-top: -25px;"> <img src="assets/images/13.PNG" style="width: 20px;height: 20px;" ></div> 
+           </th>
+           <th>  
+            <input type="text" placeholder="........Googl US (Google)" style="margin-top:-20px;margin-left: 0px;" class="v1"><div style="margin-left: 4px;margin-top: -27px;"> <img  src="assets/images/3.PNG" style="width: 23px;height: 20px;margin-top: 3px;" > </div> <div style="margin-left: 138px;margin-top: -25px;"> <img src="assets/images/13.PNG" style="width: 20px;height: 20px;" ></div> 
+     </th>
+      </tr>
+      -->
+        <tr>
+          <th>
+            <div style="margin-top: 20px;margin-bottom: -7px;"> <b>coupons</b></div>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <div class="w" style="margin-bottom: -10px;">AMOUNT</div>
+            <input type="text" class="v"
+              style="width: 125px;margin-top: -13px;margin-bottom: 15px;border-color: rgb(175, 175, 171);"
+              [attr.disabled]="selectedType == 'coupon' ? '' : null" formControlName="coupon"> <button type="button"
+              class="YT">%</button> <button type="button" class="aw1" style="margin-top:10px ;color: white;"><img
+                src="assets/images/19.PNG" style="margin-left: -6px;width: 20px;height: 20px;"> </button>
+          </th>
+          <th>
+            <div class="w" style="margin-left:20px;margin-top:-10px">PERIODICITY</div>
+            <DIV style="margin-left: -10px;"> <button id="az10" (click)="setAnnum()" type="button"
+                placeholder="Per Annum" class="v21" style="width: 65px;">Annum</button></DIV>
+          </th>
+          <th>
+            <DIV style="margin-left: -100px;margin-top: 10px;"> <button id="az10" type="button" (click)="setPeriod()"
+                class="v21"> <b>Per Period</b> </button></DIV>
+          </th>
+        <tr>
+          <th>
+            <div class="w" style="margin-top: -8px;">FREQUENCY</div>
+            <select [ngModel]="selectedFrequency" (ngModelChange)="onChangeFrequency($event)"
+              class="form-select form-select-sm" aria-label=".form-select-sm example" style="height: 28px;"
+              formControlName="frequency">
+              <option [ngValue]="i" *ngFor="let i of frequencyList">{{i}}</option>
+
+
+            </select>
+            <div class="danger" *ngIf="frequency?.invalid && (frequency?.dirty || frequency?.touched)">
+              Frequency is required
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <div style="margin-top: 20px;margin-bottom: -7px;"> <b>Downside Protection</b></div>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <div class="w" style="margin-bottom: -10px;">BARRIER LEVEL</div>
+            <input [ngModel]="value_100" type="text" placeholder="75" class="v"
+              style="width: 125px;margin-top: -13px;margin-bottom: 15px;background-color: rgb(255, 255, 255);border-color: rgb(218, 214, 214);"
+              formControlName="barrierLevel"> <button type="button" class="YT">%</button> <button type="button"
+              class="aw1" style="margin-top:10px ;color: white;"><img src="assets/images/19.PNG"
+                style="margin-left: -6px;width: 20px;height: 20px;"> </button>
+            <div class="danger" *ngIf="barrierLevel?.invalid && (barrierLevel?.dirty || barrierLevel?.touched)">
+              Barrier Level is required
+
+            </div>
+          </th>
+          <th>
+            <div class="w" style="margin-left:15px;margin-top:-3px">Autocall Delay</div>
+            <select [ngModel]="selectedBarrierObservation" (ngModelChange)="onChangeBarrierObservation($event)"
+              class="form-select form-select-sm" aria-label=".form-select-sm example"
+              style="height: 28px;margin-left: 10PX;" formControlName="firstObservation">
+              <option [ngValue]="i" *ngFor="let i of barrierObservationList">{{i}}</option>
+
+            </select>
+
+            <div class="danger"
+              *ngIf="firstObservation?.invalid && (firstObservation?.dirty || firstObservation?.touched)">
+              First Observation is required
+
+            </div>
+
+          </th>
+
+        <tr>
+          <th>
+            <div class="w" style="margin-top: -8px;">STRIKE LEVEL</div>
+            <input [ngModel]="value_100" type="text" placeholder="100" class="v"
+              style="width: 160px;margin-top: -13px;margin-bottom: 15px;background-color: rgb(255, 255, 255);border-color: rgb(206, 200, 200);"
+              formControlName="strikeLevel"> <button type="button" class="YT">%</button>
+            <div class="danger" *ngIf="strikeLevel?.invalid && (strikeLevel?.dirty || strikeLevel?.touched)">
+              Strike Level is required
+
+            </div>
+          </th>
+          <th *ngIf="selectedProduct != 'Barrier Reverse Convertible'">
+            <div class="w" style="margin-left:15px;margin-top:-3px">autocallTriggerLevel
+            </div>
+            <input type="text" placeholder="100" class="v"
+              style="width: 160px;margin-top: -13px;margin-bottom: 15px;background-color: rgb(255, 255, 255);border-color: rgb(206, 200, 200);"
+              formControlName="autocallTriggerLevel"> <button type="button" class="YT">%</button>
+
+            <div class="danger"
+              *ngIf="autocallTriggerLevel?.invalid && (autocallTriggerLevel?.dirty || autocallTriggerLevel?.touched)">
+              Autocal Trigger Level is required
+            </div>
+
+          </th>
+        </tr>
+      </table>
+    </section>
+
+    <section class="dd1">
+
+      <table>
+        <tr>
+          <th>
+            <div style="margin-bottom: 15px;"> <b>My Latest quoted received</b></div>
+          </th>
+        </tr>
+        <tr class="u">
+          <th><b class="ds">BANK</b></th>
+          <th><b class="ds1">QUOTE ID</b></th>
+          <th><b class="ds" style="margin-right: 70px;">RESULT</b></th>
+          <th><b class="ds">DATE & TIME</b></th>
+
+        </tr>
+
+        <tr>
+
+          <th> <img src="assets/images/21.PNG" class="hg"></th>
+          <th>
+            <DIV class="hg1" style="font-size:12px;color:rgb(35, 104, 182);">f435a730-0ec6-4b90</DIV>
+          </th>
+          <th style="color: darkGreen">
+            <DIV class="hg">
+              <mat-spinner *ngIf="loading"></mat-spinner>{{result}}
+            </DIV>
+          </th>
+          <th>
+            <DIV class="hg" style="font-size: 12px;color: gray;">02.23.2022 10:55</DIV>
+          </th>
+        </tr>
+        <tr>
+          <th> <img src="assets/images/22.PNG" class="hg"></th>
+          <th>
+            <DIV class="hg1" style="font-size:12px;color:rgb(35, 104, 182);">f435a730-0ec6-4b90</DIV>
+          </th>
+          <th>
+            <DIV class="hg">9.32%</DIV>
+          </th>
+          <th>
+            <DIV class="hg" style="font-size: 12px;color: gray;">02.23.2022 10:55</DIV>
+          </th>
+        </tr>
+        <tr>
+          <th> <img src="assets/images/23.PNG" class="hg"></th>
+          <th>
+            <DIV class="hg1" style="font-size:12px;color:rgb(35, 104, 182);">f435a730-0ec6-4b90</DIV>
+          </th>
+          <th>
+            <DIV class="hg">8.61%</DIV>
+          </th>
+          <th>
+            <DIV class="hg" style="font-size: 12px;color: gray;">02.23.2022 10:55</DIV>
+          </th>
+        </tr>
+        <tr>
+          <th> <img src="assets/images/24.PNG" class="hg"></th>
+          <th>
+            <DIV class="hg1" style="font-size:12px;color:rgb(35, 104, 182);">f435a730-0ec6-4b90</DIV>
+          </th>
+          <th>
+            <DIV class="hg">7.95%</DIV>
+          </th>
+          <th>
+            <DIV class="hg" style="font-size: 12px;color: gray;">02.23.2022 10:55</DIV>
+          </th>
+        </tr>
+        <tr>
+          <th> <img src="assets/images/25.PNG" class="hg"></th>
+          <th>
+            <DIV class="hg1" style="font-size:12px;color:rgb(35, 104, 182);">f435a730-0ec6-4b90</DIV>
+          </th>
+          <th>
+            <DIV class="hg">7.21%</DIV>
+          </th>
+          <th>
+            <DIV class="hg" style="font-size: 12px;color: gray;">02.23.2022 10:55</DIV>
+          </th>
+        </tr>
+        <tr>
+          <th> <img src="assets/images/26.PNG" class="hg"></th>
+          <th>
+            <DIV class="hg1" style="font-size:12px;color:rgb(35, 104, 182);">f435a730-0ec6-4b90</DIV>
+          </th>
+          <th>
+            <DIV class="hg">6.21%</DIV>
+          </th>
+          <th>
+            <DIV class="hg" style="font-size: 12px;color: gray;">02.23.2022 10:55</DIV>
+          </th>
+        </tr>
+      </table>
+      <hr style="width: 328px;margin-left: 215px;height: 2px;color: black;">
+      <table style="margin-top: -15px;margin-left: 215px;">
+        <tr>
+          <th>
+            <div><button class="d1"
+                style="background-color: rgb(17,79,153);border-color: rgb(17,79,153);margin-top: -10;"
+                [disabled]="!formModel.valid"> FIRM PRICE</button></div>
+          </th>
+          <th>
+            <div><button class="d" style="background-color: rgb(73,137,214);border-color: rgb(73,137,214);"
+                (click)="resetForm()" [disabled]="isDisabled">REFRESHS</button></div>
+          </th>
+          <th>
+            <div><button class="d" style="background-color: rgb(17,177,196);border-color: (17,177,196);"
+                [disabled]="isDisabled">SAVE FAVOURITE</button></div>
+          </th>
+          <th>
+            <div><button class="d"
+                style="color: blue;background-color: rgb(126,203,225);border-color: (126,203,225);width: 90px;"
+                [disabled]="isDisabled"> SAVE PRODUCT</button></div>
+          </th>
+        </tr>
+
+      </table>
+
+
+
+
+    </section>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
+  </form>
+</body>
+
+</html>
+<script>
+  document.getElementById('der').valueAsDate = new Date();
+
+</script>

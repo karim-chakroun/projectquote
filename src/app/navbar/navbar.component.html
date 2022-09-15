@@ -1,0 +1,66 @@
+<div class="toolbar px-5" role="banner">
+  <div class="layer">
+    <img width="140" alt="Logo" src="../../../assets/logo/stradegy.png" style="     width: 333px;  margin-left: 5rem;" />
+    <div class="spacer"></div>
+    <div class="icons">
+      <i class="fa fa-2x fa-comments"></i>
+      <i class="fa fa-2x fa-bell"></i>
+    </div>
+
+    <div class="dropdown px-2">
+      <button class="btn btn-secondary dropdown-toggle menue-button" type="button" id="dropdownMenuButton"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="    letter-spacing: 1.5px;
+        font-size: 18px;
+        opacity: 1;
+        font-weight: 100; box-shadow: 0px 0px 0px 8px rgb(0 0 0 / 0%);">
+        JOHN SMITH
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="layer">
+    <div class="d-flex w-100 px-5">
+      <div class="w-100" style="    padding-left: 75px; margin-top: -0.9rem;">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+              role="tab" aria-controls="nav-home" aria-selected="false" routerLink="admin">HOME</button>
+            <button class="nav-link" id="nav-portfolio-tab" data-bs-toggle="tab" data-bs-target="#nav-portfolio"
+              type="button" role="tab" aria-controls="nav-portfolio" aria-selected="false">PORTFOLIO</button>
+            <button class="nav-link active" id="nav-pricer-tab" data-bs-toggle="tab" data-bs-target="#nav-pricer"
+              type="button" role="tab" aria-controls="nav-pricer" aria-selected="true" routerLink="price">PRICER</button>
+            <button class="nav-link" id="nav-quotes-tab" data-bs-toggle="tab" data-bs-target="#nav-quotes" type="button"
+              role="tab" aria-controls="nav-quotes" aria-selected="false">QUOTES</button>
+
+          </div>
+        </nav>
+      </div>
+      <div class="flex-shrink-1" style="    margin-top: -13px;
+      letter-spacing: 2.5px;
+      font-size: 18px;">ADMIN</div>
+    </div>
+  </div>
+
+
+</div>
+
+<br />
+<div class="content" role="main">
+  <div class="section-outlet">
+    <router-outlet></router-outlet>
+
+  </div>
+  <footer id="footer" class="font-small w-100">
+
+    <div class="footer-copyright p-1"> Copyright 2022 | Stradegy Investment Solution Ltd | All Rights Reserved |
+      Disclaimer
+    </div>
+
+  </footer>
+
+</div>
